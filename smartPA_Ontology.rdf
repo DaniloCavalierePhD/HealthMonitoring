@@ -1,0 +1,511 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.org/smartPAsys#"
+     xml:base="http://example.org/smartPAsys"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:geo="http://www.georss.org/georss/"
+     xmlns:gml="http://www.opengis.net/gml/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:ssn="http://www.w3.org/ns/ssn/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:sosa="http://www.w3.org/ns/sosa/"
+     xmlns:time="http://www.w3.org/2006/time#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="http://schema.org/"
+     xmlns:WeatherOntology="https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl#">
+    <owl:Ontology rdf:about="http://example.org/smartPAsys">
+        <owl:imports rdf:resource="http://www.opengis.net/gml/"/>
+        <owl:imports rdf:resource="http://www.opengis.net/ont/geosparql"/>
+        <owl:imports rdf:resource="http://www.w3.org/ns/ssn/"/>
+        <owl:imports rdf:resource="https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl"/>
+        <owl:versionInfo>Created with TopBraid Composer</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/madeByService -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/madeByService">
+        <owl:inverseOf rdf:resource="http://www.w3.org/ns/sosa/madeObservation"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+        <rdfs:range rdf:resource="https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl#ServiceReportSource"/>
+        <rdfs:label>made by service</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/madeObservation -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/madeObservation"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/observes -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/observes">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+        <rdfs:domain rdf:resource="https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl#ServiceReportSource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/hasSimpleResult -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/hasSimpleResult">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl#hasLink -->
+
+    <owl:DatatypeProperty rdf:about="https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl#hasLink">
+        <rdfs:domain rdf:resource="https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl#ServiceReportSource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>has link</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.org/smartPAsys#Band -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#Band">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Spectral"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#Blue -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#Blue">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Band"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#Broadband_Greenness -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#Broadband_Greenness">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#VI"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#Canopy_Water_Content -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#Canopy_Water_Content">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#VI"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#Contextual -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#Contextual">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#Dry_Senescent_Carbon -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#Dry_Senescent_Carbon">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#VI"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#Green -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#Green">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Band"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#Leaf_Pigment -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#Leaf_Pigment">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#VI"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#Light_Use_Efficiency -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#Light_Use_Efficiency">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#VI"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#NIR -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#NIR">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Band"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#Narrowband_Greenness -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#Narrowband_Greenness">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#VI"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#Red -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#Red">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Band"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#SWIR -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#SWIR">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Band"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#Spatial -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#Spatial">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#Spectral -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#Spectral">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#VI -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#VI">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Spectral"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#mean_ARI1 -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#mean_ARI1">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Leaf_Pigment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#mean_ARI2 -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#mean_ARI2">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Leaf_Pigment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#mean_ARVI -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#mean_ARVI">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Broadband_Greenness"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#mean_CAI -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#mean_CAI">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Dry_Senescent_Carbon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#mean_CRI1 -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#mean_CRI1">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Leaf_Pigment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#mean_CRI2 -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#mean_CRI2">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Leaf_Pigment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#mean_EVI -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#mean_EVI">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Broadband_Greenness"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#mean_MCARI1 -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#mean_MCARI1">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Leaf_Pigment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#mean_MCARI2 -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#mean_MCARI2">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Leaf_Pigment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#mean_MSAVI -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#mean_MSAVI">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Broadband_Greenness"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#mean_MSI -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#mean_MSI">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Canopy_Water_Content"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#mean_NBR -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#mean_NBR">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Dry_Senescent_Carbon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#mean_NDII -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#mean_NDII">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Canopy_Water_Content"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#mean_NDLI -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#mean_NDLI">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Dry_Senescent_Carbon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#mean_NDMI -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#mean_NDMI">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Canopy_Water_Content"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#mean_NDNI -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#mean_NDNI">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Light_Use_Efficiency"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#mean_NDVI -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#mean_NDVI">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Broadband_Greenness"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#mean_NDVI705 -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#mean_NDVI705">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Narrowband_Greenness"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#mean_NDWI -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#mean_NDWI">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Canopy_Water_Content"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#mean_PRI -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#mean_PRI">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Light_Use_Efficiency"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#mean_PSRI -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#mean_PSRI">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Dry_Senescent_Carbon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#mean_REP -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#mean_REP">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Narrowband_Greenness"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#mean_RGR -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#mean_RGR">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Light_Use_Efficiency"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#mean_SG -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#mean_SG">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Broadband_Greenness"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#mean_SIPI -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#mean_SIPI">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Light_Use_Efficiency"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#mean_SR -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#mean_SR">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Broadband_Greenness"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#mean_VOG1 -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#mean_VOG1">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Narrowband_Greenness"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#mean_VOG2 -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#mean_VOG2">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Narrowband_Greenness"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#mean_VOG3 -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#mean_VOG3">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Narrowband_Greenness"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#mean_WBI -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#mean_WBI">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Canopy_Water_Content"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#mean_mNDVI705 -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#mean_mNDVI705">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Narrowband_Greenness"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/smartPAsys#mean_mSR705 -->
+
+    <owl:Class rdf:about="http://example.org/smartPAsys#mean_mSR705">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Narrowband_Greenness"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.opengis.net/gml/_Feature -->
+
+    <owl:Class rdf:about="http://www.opengis.net/gml/_Feature">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Spatial"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl#WeatherPhenomenon -->
+
+    <rdf:Description rdf:about="https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl#WeatherPhenomenon">
+        <rdfs:subClassOf rdf:resource="http://example.org/smartPAsys#Contextual"/>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
