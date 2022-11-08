@@ -1,4 +1,4 @@
-# HealthMonitoring
+# VegetationHealthMonitoring
 Repository for Vegetation Health Monitoring based on fuzzy inference.
 
 The notebook performs fuzzy modeling of spectral indices and runs fuzzy inference on them to assess vegetation health state.
